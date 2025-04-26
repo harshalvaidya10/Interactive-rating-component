@@ -1,94 +1,143 @@
-# Frontend Mentor - Interactive rating component
+# Frontend Mentor - Interactive rating component solution
 
-![Design preview for the Interactive rating component coding challenge](./preview.jpg)
+This is a solution to the [Interactive rating component challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/interactive-rating-component-koxpeBUmI). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
 
-## Welcome! 👋
+## Table of contents
 
-Thanks for checking out this front-end coding challenge.
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+- [Author](#author)
 
-[Frontend Mentor](https://www.frontendmentor.io) challenges help you improve your coding skills by building realistic projects.
 
-**To do this challenge, you need a basic understanding of HTML, CSS and JavaScript.**
 
-## The challenge
 
-Your challenge is to build out this interactive rating component and get it looking as close to the design as possible.
+## Overview
 
-You can use any tools you like to help you complete the challenge. So if you've got something you'd like to practice, feel free to give it a go.
+### The challenge
 
-Your users should be able to:
+Users should be able to:
 
 - View the optimal layout for the app depending on their device's screen size
 - See hover states for all interactive elements on the page
 - Select and submit a number rating
 - See the "Thank you" card state after submitting a rating
 
-Want some support on the challenge? [Join our community](https://www.frontendmentor.io/community) and ask questions in the **#help** channel.
+### Screenshot
 
-## Where to find everything
+![alt text](image.png)
+![alt text](image-1.png)
+![alt text](image-3.png)
+![alt text](image-4.png)
 
-Your task is to build out the project to the designs inside the `/design` folder. You will find both a mobile and a desktop version of the design. 
+### Links
 
-The designs are in JPG static format. Using JPGs will mean that you'll need to use your best judgment for styles such as `font-size`, `padding` and `margin`. 
+- Solution URL: [Link](https://github.com/harshalvaidya10/Interactive-rating-component.git)
+- Live Site URL: [Link](https://your-live-site-url.com)
 
-If you would like the Figma design file to gain experience using professional tools and build more accurate projects faster, you can [subscribe as a PRO member](https://www.frontendmentor.io/pro).
+## My process
 
-You will find all the required assets in the `/images` folder. The assets are already optimized.
+### Built with
 
-There is also a `style-guide.md` file containing the information you'll need, such as color palette and fonts.
+- Semantic and accessible HTML5 markup
 
-## Building your project
+- CSS Flexbox for layout and centering
 
-Feel free to use any workflow that you feel comfortable with. Below is a suggested process, but do not feel like you need to follow these steps:
+- Custom CSS properties for consistent styling
 
-1. Initialize your project as a public repository on [GitHub](https://github.com/). Creating a repo will make it easier to share your code with the community if you need help. If you're not sure how to do this, [have a read-through of this Try Git resource](https://try.github.io/).
-2. Configure your repository to publish your code to a web address. This will also be useful if you need some help during a challenge as you can share the URL for your project with your repo URL. There are a number of ways to do this, and we provide some recommendations below.
-3. Look through the designs to start planning out how you'll tackle the project. This step is crucial to help you think ahead for CSS classes to create reusable styles.
-4. Before adding any styles, structure your content with HTML. Writing your HTML first can help focus your attention on creating well-structured content.
-5. Write out the base styles for your project, including general content styles, such as `font-family` and `font-size`.
-6. Start adding styles to the top of the page and work down. Only move on to the next section once you're happy you've completed the area you're working on.
+- Vanilla JavaScript for dynamic behavior and event handling
 
-## Deploying your project
+- Dynamic UI updates using .innerHTML and event-driven programming
 
-As mentioned above, there are many ways to host your project for free. Our recommended hosts are:
+- Mobile-first responsive design approach
 
-- [GitHub Pages](https://pages.github.com/)
-- [Vercel](https://vercel.com/)
-- [Netlify](https://www.netlify.com/)
+### What I learned
 
-You can host your site using one of these solutions or any of our other trusted providers. [Read more about our recommended and trusted hosts](https://medium.com/frontend-mentor/frontend-mentor-trusted-hosting-providers-bf000dfebe).
+**1.Dynamic Content Update with ```.innerHTML```**
 
-## Create a custom `README.md`
+One of the key parts of this project was using JavaScript's ```.innerHTML``` property to dynamically replace the content inside a container after the user submitted their rating.
 
-We strongly recommend overwriting this `README.md` with a custom one. We've provided a template inside the [`README-template.md`](./README-template.md) file in this starter code.
+✅ Example:
 
-The template provides a guide for what to add. A custom `README` will help you explain your project and reflect on your learnings. Please feel free to edit our template as much as you like.
+```js
+document.getElementById("box").innerHTML =
+`
+  <h2>Thank you!</h2>
+  <p>You selected ${selectedRating} out of 5</p>
+`;
+```
+**Takeaway:**
 
-Once you've added your information to the template, delete this file and rename the `README-template.md` file to `README.md`. That will make it show up as your repository's README file.
+I understood how .innerHTML can be used to fully replace an element's content and how it parses HTML strings to update the DOM in real-time.
 
-## Submitting your solution
 
-Submit your solution on the platform for the rest of the community to see. Follow our ["Complete guide to submitting solutions"](https://medium.com/frontend-mentor/a-complete-guide-to-submitting-solutions-on-frontend-mentor-ac6384162248) for tips on how to do this.
+**2.Capturing Button Clicks without Forms**
 
-Remember, if you're looking for feedback on your solution, be sure to ask questions when submitting it. The more specific and detailed you are with your questions, the higher the chance you'll get valuable feedback from the community.
+Since I used ```<input type="button">```, I learned that buttons do not have a .checked property like radio buttons.
 
-## Sharing your solution
+Instead, I needed to listen to click events and store the selected value separately.
 
-There are multiple places you can share your solution:
+✅ Example:
 
-1. Share your solution page in the **#finished-projects** channel of the [community](https://www.frontendmentor.io/community). 
-2. Tweet [@frontendmentor](https://twitter.com/frontendmentor) and mention **@frontendmentor**, including the repo and live URLs in the tweet. We'd love to take a look at what you've built and help share it around.
-3. Share your solution on other social channels like LinkedIn.
-4. Blog about your experience building your project. Writing about your workflow, technical choices, and talking through your code is a brilliant way to reinforce what you've learned. Great platforms to write on are [dev.to](https://dev.to/), [Hashnode](https://hashnode.com/), and [CodeNewbie](https://community.codenewbie.org/).
+```js
+let selectedRating = null;
 
-We provide templates to help you share your solution once you've submitted it on the platform. Please do edit them and include specific questions when you're looking for feedback. 
+const ratingButtons = document.querySelectorAll(".ratingButtons input");
 
-The more specific you are with your questions the more likely it is that another member of the community will give you feedback.
+ratingButtons.forEach(button => {
+    button.addEventListener("click", function() {
+        selectedRating = this.value;
+    });
+});
+```
+**Takeaway:**
 
-## Got feedback for us?
+I learned the importance of properly managing user interaction without relying on default form behaviors.
 
-We love receiving feedback! We're always looking to improve our challenges and our platform. So if you have anything you'd like to mention, please email hi@frontendmentor.io.
+**3.Using Flexbox for Centering Elements**
 
-This challenge is completely free. Please share it with anyone who will find it useful for practice.
+I practiced how to use Flexbox for both horizontal and vertical centering of my rating card.
 
-**Have fun building!** 🚀
+✅ Example:
+```css
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+```
+**Takeaway:**
+
+Flexbox made it much easier to create responsive, centered layouts without complicated manual positioning.
+
+**4.Improving User Experience with Hover and Focus States**
+
+I used hover and focus styles in CSS to make the rating buttons visually interactive.
+
+✅ Example:
+
+```css
+.ratingButtons input:hover {
+  background-color: rgb(225, 120, 50);
+  color: black;
+}
+
+.ratingButtons input:focus {
+  background-color: white;
+  color: black;
+}
+```
+
+**Takeaway:**
+
+I learned how important small visual feedback is to improve user interaction and make the UI feel more responsive and polished.
+
+## Author
+
+- Frontend Mentor - [@harshalvaidya10](https://www.frontendmentor.io/profile/harshalvaidya10)
+
