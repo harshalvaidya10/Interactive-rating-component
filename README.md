@@ -37,7 +37,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Link](https://github.com/harshalvaidya10/Interactive-rating-component.git)
-- Live Site URL: [Link](https://your-live-site-url.com)
+- Live Site URL: [Link](https://hvvaidya-interactive-rating-component.netlify.app/)
 
 ## My process
 
